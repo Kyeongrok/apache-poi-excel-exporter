@@ -1,5 +1,6 @@
 package com.likelion.dao;
 import com.likelion.domain.User;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.sql.*;
 import java.util.Map;
@@ -10,6 +11,26 @@ public class UserDao {
 
     public UserDao(ConnectionMaker connectionMaker) {
         this.connectionMaker = connectionMaker;
+    }
+
+    public void jdbcContextWithStatementStrategy(StatementStrategy stmt) throws SQLException {
+        Connection c = connectionMaker.makeConnection();
+        PreparedStatement pstmt = stmt.makeStrategy(c);
+        pstmt.executeUpdate();
+        pstmt.close();
+        c.close();
+    }
+
+    public void deleteAll() throws SQLException {
+        jdbcContextWithStatementStrategy(c->c.prepareStatement("delete from users"));
+    }
+
+    public int getCount() throws SQLException {
+        StatementStrategy stmt = (c)-> c.prepareStatement("select count(*) from users");
+        PreparedStatement pstmt = stmt.makeStrategy(connectionMaker.makeConnection());
+        ResultSet rs = pstmt.executeQuery();
+        rs.next();
+        return rs.getInt(1);
     }
 
     public void add(User user) {
@@ -48,9 +69,12 @@ public class UserDao {
 
             // Query문 실행
             ResultSet rs = pstmt.executeQuery();
-            rs.next();
-            User user = new User(rs.getString("id"), rs.getString("name"),
-                    rs.getString("password"));
+            User user = null;
+            if (rs.next()) {
+                user = new User(rs.getString("id"), rs.getString("name"),
+                        rs.getString("password"));
+            }
+            if(user==null) throw new EmptyResultDataAccessException(1);
 
             rs.close();
             pstmt.close();
