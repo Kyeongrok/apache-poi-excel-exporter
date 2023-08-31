@@ -13,9 +13,12 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.30'
     implementation 'org.springframework.boot:spring-boot-starter-test:2.7.4'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.7.4'
+    implementation 'org.apache.poi:poi:5.2.2'
+    implementation 'org.apache.poi:poi-ooxml:5.2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+
 
 
 }

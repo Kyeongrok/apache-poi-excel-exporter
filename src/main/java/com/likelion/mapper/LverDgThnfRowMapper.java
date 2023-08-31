@@ -14,22 +14,22 @@ public class LverDgThnfRowMapper implements RowMapper<LverDgThnf> {
         LverDgThnf lverDgThnf = new LverDgThnf();
 
         lverDgThnf.setId(rs.getLong("id"));
-        lverDgThnf.setCenterCd(rs.getString("CenterCd"));
-        lverDgThnf.setIrbAprvNo(rs.getString("IrbAprvNo"));
-        lverDgThnf.setPtSbstNo(rs.getString("PtSbstNo"));
-        lverDgThnf.setAndgAnthRcrdYmd(rs.getString("AndgAnthRcrdYmd"));
-        lverDgThnf.setAndgAnthSeq(rs.getInt("AndgAnthSeq"));
-        lverDgThnf.setAndgHtMsrmYmd(rs.getString("AndgHtMsrmYmd"));
-        lverDgThnf.setAndgHtMsrmVl(rs.getFloat("AndgHtMsrmVl"));
-        lverDgThnf.setAndgWtMsrmYmd(rs.getString("AndgWtMsrmYmd"));
-        lverDgThnf.setAndgWtMsrmVl(rs.getFloat("AndgWtMsrmVl"));
-        lverDgThnf.setAndgBmiVl(rs.getFloat("AndgBmiVl"));
-        lverDgThnf.setAndgEcogCd(rs.getString("AndgEcogCd"));
-        lverDgThnf.setAndgEcogNm(rs.getString("AndgEcogNm"));
-        lverDgThnf.setAndgEcogCdEtcCont(rs.getString("AndgEcogCdEtcCont"));
-        lverDgThnf.setAndgCtrtBlprVl(rs.getString("AndgCtrtBlprVl"));
-        lverDgThnf.setAndgRlxtBlprVl(rs.getString("AndgRlxtBlprVl"));
-        lverDgThnf.setCrtnDt(rs.getObject("CrtnDt", LocalDateTime.class));
+        lverDgThnf.setCenterCd(rs.getString("CENTER_CD"));
+        lverDgThnf.setIrbAprvNo(rs.getString("IRB_APRV_NO"));
+        lverDgThnf.setPtSbstNo(rs.getString("PT_SBST_NO"));
+        lverDgThnf.setAndgAnthRcrdYmd(rs.getString("ANDG_ANTH_RCRD_YMD"));
+        lverDgThnf.setAndgAnthSeq(rs.getInt("ANDG_ANTH_SEQ"));
+        lverDgThnf.setAndgHtMsrmYmd(rs.getString("ANDG_HT_MSRM_YMD"));
+        lverDgThnf.setAndgHtMsrmVl(rs.getFloat("ANDG_HT_MSRM_VL"));
+        lverDgThnf.setAndgWtMsrmYmd(rs.getString("ANDG_WT_MSRM_YMD"));
+        lverDgThnf.setAndgWtMsrmVl(rs.getFloat("ANDG_WT_MSRM_VL"));
+        lverDgThnf.setAndgBmiVl(rs.getFloat("ANDG_BMI_VL"));
+        lverDgThnf.setAndgEcogCd(rs.getString("ANDG_ECOG_CD"));
+        lverDgThnf.setAndgEcogNm(rs.getString("ANDG_ECOG_NM"));
+        lverDgThnf.setAndgEcogCdEtcCont(rs.getString("ANDG_ECOG_CD_ETC_CONT"));
+        lverDgThnf.setAndgCtrtBlprVl(rs.getString("ANDG_CTRT_BLPR_VL"));
+        lverDgThnf.setAndgRlxtBlprVl(rs.getString("ANDG_RLXT_BLPR_VL"));
+        lverDgThnf.setCrtnDt(rs.getObject("CRTN_DT", LocalDateTime.class));
 
         return lverDgThnf;
     }
