@@ -1,0 +1,6 @@
+spring:
+  datasource:
+      url: jdbc:mysql://ec1-2-34-56-244.ap-northeast-2.compute.amazonaws.com:3306/catholic_hospital
+      username: catholic_user1
+      password: password
+      driver-class-name: com.mysql.cj.jdbc.Driver
